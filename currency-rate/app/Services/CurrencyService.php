@@ -12,7 +12,7 @@ class CurrencyService
         $params = ['uri' => '/convert', 'from' => $from, 'to' => $to];
         $response = $client->sendRateRequest($params);
         $data = json_decode($response->getBody()->getContents());
-        if (!isset($data->info) || !isset($data->ino->rate)) {
+        if (!isset($data->info) || !isset($data->info->rate)) {
             throw new \Exception('No rate is provided');
         }
         return $data->info->rate;
