@@ -8,7 +8,7 @@ class FileStorageDriver extends StorageDriver
     {
         $this->repo = $repository;
     }
-    public function read($record)
+    public function read($record = '')
     {
         if (empty(filesize($this->repo))) return false;
         $stream = fopen($this->repo, 'r');
