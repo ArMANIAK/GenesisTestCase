@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/rate', 'CurrencyController@getCurrencyRate');
+Route::post('/subscribe', 'EmailSubscriptionController@subscribeEmail');
